@@ -2,7 +2,7 @@ module lk.ijse.gdse.hardwaremanagementsystem {
     requires javafx.controls;
     requires javafx.fxml;
 
-    //MYSQL eka add kara
+    //MYSQL eka add kala
     requires java.sql;
     requires mysql.connector.j;
 
@@ -10,8 +10,7 @@ module lk.ijse.gdse.hardwaremanagementsystem {
     requires static lombok;
 
 
-
-
     opens lk.ijse.gdse.hardwaremanagementsystem.Controller to javafx.fxml;
     exports lk.ijse.gdse.hardwaremanagementsystem;
 }
+

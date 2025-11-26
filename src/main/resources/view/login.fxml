@@ -22,7 +22,7 @@
       </ImageView>
 
       <!-- Login form panel -->
-      <Pane layoutX="522.0" layoutY="180.0" prefHeight="236.0" prefWidth="363.0" style="-fx-background-color: #EEEEEE; -fx-background-radius: 20;">
+      <Pane layoutX="515.0" layoutY="185.0" prefHeight="236.0" prefWidth="363.0" style="-fx-background-color: #EEEEEE; -fx-background-radius: 20;">
          <children>
             <Text layoutX="14.0" layoutY="31.0" text="Log in">
                <font>
@@ -42,14 +42,14 @@
                </font>
             </Text>
 
-            <TextField fx:id="txtEmail" layoutX="104.0" layoutY="62.0" onAction="#btnLogin" prefHeight="25.0" prefWidth="232.0" promptText="Email" style="-fx-background-radius: 5;" />
+            <TextField fx:id="txtEmail" layoutX="104.0" layoutY="62.0" prefHeight="25.0" prefWidth="232.0" promptText="Email" style="-fx-background-radius: 5;" />
 
-            <Button fx:id="btnSignUp" layoutX="76.0" layoutY="169.0" mnemonicParsing="false" onAction="#signup" prefHeight="25.0" prefWidth="251.0" style="-fx-background-color: #FFA500; -fx-background-radius: 10;" text="Sign Up" textFill="WHITE">
+            <Button layoutX="76.0" layoutY="169.0" mnemonicParsing="false" onAction="#btnSignUp" prefHeight="25.0" prefWidth="251.0" style="-fx-background-color: #FFA500; -fx-background-radius: 10;" text="Sign Up" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Button>
-            <PasswordField fx:id="txtPassword" layoutX="107.0" layoutY="106.0" onAction="#btnLogin" prefHeight="25.0" prefWidth="232.0" promptText="Password" style="-fx-background-radius: 5;" />
+            <PasswordField fx:id="txtPassword" layoutX="107.0" layoutY="106.0" prefHeight="25.0" prefWidth="232.0" promptText="Password" style="-fx-background-radius: 5;" />
          </children>
       </Pane>
    </children>
