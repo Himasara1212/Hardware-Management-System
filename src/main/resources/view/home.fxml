@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.PointLight?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="550.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse.hardwaremanagementsystem.Controller.HomeController">
+   <children>
+      <AnchorPane prefHeight="34.0" prefWidth="904.0" style="-fx-background-color: #FFAE42;">
+         <children>
+            <Label layoutX="27.0" layoutY="-1.0" prefHeight="34.0" prefWidth="153.0" text="Wellcome">
+               <font>
+                  <Font name="Franklin Gothic Demi Cond" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="72.0" layoutX="15.0" layoutY="88.0" stroke="#ff6400" strokeType="INSIDE" width="222.0">
+         <fill>
+            <LinearGradient endX="0.8958990536277602" endY="0.7791798069650068">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.9736841917037964" green="0.5379304885864258" blue="0.07212475687265396" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9599999785423279" green="0.9599999785423279" blue="0.9599999785423279" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Label layoutX="33.0" layoutY="98.0" prefHeight="43.0" prefWidth="196.0" text="Rs.10,000/=">
+         <font>
+            <Font name="Franklin Gothic Demi Cond" size="34.0" />
+         </font>
+      </Label>
+      <Label layoutX="33.0" layoutY="130.0" prefHeight="24.0" prefWidth="83.0" text="Current (Today)" />
+      <Label layoutX="15.0" layoutY="70.0" prefHeight="17.0" prefWidth="83.0" text="Cash On Hand" />
+      <Label layoutX="15.0" layoutY="43.0" prefHeight="20.0" prefWidth="90.0" text="Today Details">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="72.0" layoutX="15.0" layoutY="190.0" strokeType="INSIDE" width="222.0">
+         <stroke>
+            <LinearGradient endX="0.8958990536277602" endY="0.6845425649396254">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.9736841917037964" green="0.5379304885864258" blue="0.07212475687265396" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006711409395973154">
+                     <color>
+                        <Color red="0.9736841917037964" green="0.5379304885864258" blue="0.07212475687265396" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="0.5166666507720947" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </stroke>
+         <fill>
+            <LinearGradient endX="0.8958990536277602" endY="0.6845425649396254">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.9736841917037964" green="0.5379304885864258" blue="0.07212475687265396" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006711409395973154">
+                     <color>
+                        <Color red="0.9736841917037964" green="0.5379304885864258" blue="0.07212475687265396" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006711409395973154">
+                     <color>
+                        <Color red="0.9700000286102295" green="0.5386733412742615" blue="0.07760000228881836" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9736841917037964" green="0.9736841917037964" blue="0.9736841917037964" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Line endX="-99.00000762939453" endY="66.00001525878906" layoutX="225.0" layoutY="189.0" startX="-99.00000762939453" startY="9.333328247070312" stroke="#ff7d05" />
+      <Label layoutX="15.0" layoutY="169.0" prefHeight="20.0" prefWidth="139.0" text="Item Issueing &amp; Returning" />
+      <Text layoutX="76.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Items Issued" wrappingWidth="43.523422241210994" />
+      <Text layoutX="185.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Items Return" wrappingWidth="43.52342224121094" />
+      <Label layoutX="31.0" layoutY="207.0" prefHeight="39.0" prefWidth="44.0" text="20">
+         <font>
+            <Font name="Franklin Gothic Demi Cond" size="34.0" />
+         </font>
+      </Label>
+      <Label layoutX="143.0" layoutY="206.0" prefHeight="39.0" prefWidth="35.0" text="20">
+         <font>
+            <Font name="Franklin Gothic Demi Cond" size="34.0" />
+         </font>
+      </Label>
+      <PieChart layoutY="293.0" legendSide="TOP" prefHeight="256.0" prefWidth="376.0" title="Stock Levels" />
+      <LineChart layoutX="375.0" layoutY="297.0" prefHeight="247.0" prefWidth="529.0">
+        <xAxis>
+          <CategoryAxis label="Today Sales" side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <PointLight color="CHARTREUSE" layoutX="279.0" layoutY="322.0" lightOn="true" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f4f4f4" height="225.0" layoutX="253.0" layoutY="44.0" stroke="BLACK" strokeType="INSIDE" width="208.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="225.0" layoutX="468.0" layoutY="44.0" stroke="BLACK" strokeType="INSIDE" width="208.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="225.0" layoutX="682.0" layoutY="44.0" stroke="BLACK" strokeType="INSIDE" width="208.0" />
+      <Label layoutX="265.0" layoutY="55.0" text="High Demand Items" />
+      <Label layoutX="478.0" layoutY="55.0" text="Best Suppliers" />
+      <Label layoutX="692.0" layoutY="54.0" text="Orders" />
+      <Label layoutX="288.0" layoutY="87.0" text="Items" />
+      <Label layoutX="390.0" layoutY="87.0" text="Item Qty" />
+      <Label layoutX="262.0" layoutY="111.0" text="-" />
+      <Label layoutX="262.0" layoutY="141.0" text="-" />
+      <Label layoutX="262.0" layoutY="170.0" text="-" />
+      <Label layoutX="262.0" layoutY="201.0" text="-" />
+      <Label layoutX="262.0" layoutY="233.0" text="-" />
+      <Label layoutX="361.0" layoutY="111.0" text="-" />
+      <Label layoutX="361.0" layoutY="141.0" text="-" />
+      <Label layoutX="361.0" layoutY="170.0" text="-" />
+      <Label layoutX="361.0" layoutY="202.0" text="-" />
+      
+      <Label layoutX="361.0" layoutY="233.0" text="-" />
+      <Line endX="36.666656494140625" endY="-68.66666412353516" layoutX="338.0" layoutY="141.0" startX="-72.99996948242188" startY="-68.66666412353516" />
+      <Line endX="1.66668701171875" endY="-7.62939453125E-6" layoutX="553.0" layoutY="73.0" startX="-77.66668701171875" startY="-7.62939453125E-6" />
+      <Label layoutX="478.0" layoutY="87.0" text="Supplier Name" />
+      <Label layoutX="597.0" layoutY="89.0" text="Item Qty" />
+      <Label layoutX="478.0" layoutY="111.0" text="-" />
+      <Label layoutX="478.0" layoutY="141.0" text="-" />
+      <Label layoutX="478.0" layoutY="170.0" text="-" />
+      <Label layoutX="478.0" layoutY="201.0" text="-" />
+      <Label layoutX="478.0" layoutY="233.0" text="-" />
+      <Label layoutX="583.0" layoutY="111.0" text="-" />
+      <Label layoutX="583.0" layoutY="141.0" text="-" />
+      <Label layoutX="583.0" layoutY="170.0" text="-" />
+      <Label layoutX="583.0" layoutY="202.0" text="-" />
+      <Label layoutX="583.0" layoutY="233.0" text="-" />
+      <Label layoutX="710.0" layoutY="89.0" text="Order" />
+      <Label layoutX="822.0" layoutY="87.0" text="Order Qty" />
+      <Label layoutX="693.0" layoutY="111.0" text="-" />
+      <Label layoutX="693.0" layoutY="202.0" text="-" />
+      <Label layoutX="693.0" layoutY="170.0" text="-" />
+      <Label layoutX="693.0" layoutY="141.0" text="-" />
+      <Label layoutX="693.0" layoutY="233.0" text="-" />
+      <Label layoutX="794.0" layoutY="233.0" text="-" />
+      <Label layoutX="794.0" layoutY="202.0" text="-" />
+      <Label layoutX="794.0" layoutY="170.0" text="-" />
+      <Label layoutX="794.0" layoutY="141.0" text="-" />
+      <Label layoutX="794.0" layoutY="111.0" text="-" />
+      <Line endX="22.66668701171875" endY="-0.6666641235351562" layoutX="710.0" layoutY="72.0" startX="-18.0" startY="-0.6666641235351562" />
+   </children>
+</AnchorPane>

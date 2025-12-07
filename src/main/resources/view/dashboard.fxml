@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="body" prefHeight="550.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse.hardwaremanagementsystem.Controller.DashBoardController">
+
+   <!-- Left Sidebar -->
+   <Pane layoutY="81.0" prefHeight="471.0" prefWidth="81.0" style="-fx-background-color: #BCC6CC;">
+      <children>
+         <Button layoutX="14.0" layoutY="6.0" mnemonicParsing="false" onAction="#navigateToHome" prefHeight="62.0" prefWidth="52.0" style="-fx-background-color: none;" />
+         <Text layoutX="27.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Home" wrappingWidth="26.8681640625">
+            <font>
+               <Font size="9.0" />
+            </font>
+         </Text>
+         <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="23.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../images/ih.png" />
+            </image>
+         </ImageView>
+         <Button layoutX="14.0" layoutY="72.0" mnemonicParsing="false" onAction="#navigateToItem" prefHeight="62.0" prefWidth="52.0" style="-fx-background-color: none;" />
+         <Text layoutX="27.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item" textAlignment="CENTER" wrappingWidth="26.8681640625">
+            <font>
+               <Font size="9.0" />
+            </font>
+         </Text>
+         <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="23.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../images/iI.png" />
+            </image>
+         </ImageView>
+         <Button layoutX="14.0" layoutY="138.0" mnemonicParsing="false" onAction="#navigateToSettings" prefHeight="62.0" prefWidth="52.0" style="-fx-background-color: none;" />
+         <Text layoutX="20.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Settings" textAlignment="CENTER" wrappingWidth="40.20151138305664">
+            <font>
+               <Font size="9.0" />
+            </font>
+         </Text>
+         <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="23.0" layoutY="146.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../images/is.png" />
+            </image>
+         </ImageView>
+         <Button layoutX="14.0" layoutY="204.0" mnemonicParsing="false" onAction="#navigateToPayment" prefHeight="62.0" prefWidth="52.0" style="-fx-background-color: none;" />
+         <Text layoutX="21.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment" textAlignment="CENTER" wrappingWidth="40.20151138305664">
+            <font>
+               <Font size="9.0" />
+            </font>
+         </Text>
+         <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="23.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../images/ip.png" />
+            </image>
+         </ImageView>
+         <Button layoutX="14.0" layoutY="269.0" mnemonicParsing="false" onAction="#navigateToOrder" prefHeight="62.0" prefWidth="52.0" style="-fx-background-color: none;" />
+         <Text layoutX="27.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order" textAlignment="CENTER" wrappingWidth="26.8681640625">
+            <font>
+               <Font size="9.0" />
+            </font>
+         </Text>
+         <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="23.0" layoutY="277.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../images/ic.png" />
+            </image>
+         </ImageView>
+         <Button layoutX="14.0" layoutY="334.0" mnemonicParsing="false" onAction="#navigateToGmail" prefHeight="62.0" prefWidth="52.0" style="-fx-background-color: none;" />
+         <Text layoutX="27.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gmail" textAlignment="CENTER" wrappingWidth="26.8681640625">
+            <font>
+               <Font size="9.0" />
+            </font>
+         </Text>
+         <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="23.0" layoutY="342.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../images/ig.png" />
+            </image>
+         </ImageView>
+         <Button layoutX="14.0" layoutY="399.0" mnemonicParsing="false" onAction="#navigateToDelivary" prefHeight="62.0" prefWidth="52.0" style="-fx-background-color: none;" />
+         <Text layoutX="15.0" layoutY="448.0" strokeMiterLimit="1.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delivery" textAlignment="CENTER" wrappingWidth="50.0">
+            <font>
+               <Font size="9.0" />
+            </font>
+         </Text>
+         <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="23.0" layoutY="407.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../images/id.png" />
+            </image>
+         </ImageView>
+      </children>
+   </Pane>
+
+   <!-- Top Header -->
+   <Pane prefHeight="81.0" prefWidth="900.0" style="-fx-background-color: #BCC6CC;">
+      <children>
+         <Button layoutX="624.0" layoutY="43.0" mnemonicParsing="false" onAction="#btnAddNewUser" prefHeight="27.0" prefWidth="116.0" style="-fx-background-color: #FFA500; -fx-background-radius: 5;" text="Add new users" textFill="WHITE">
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font>
+         </Button>
+
+         <Button layoutX="748.0" layoutY="43.0" mnemonicParsing="false" onAction="#btnLogOut" prefHeight="27.0" prefWidth="74.0" style="-fx-background-radius: 5; -fx-background-color: green;" text="Log Out" textFill="WHITE">
+            <font>
+               <Font name="System Bold" size="13.0" />
+            </font>
+         </Button>
+
+         <Text fx:id="lblUserEmail" fill="WHITE" layoutX="547.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sample@Gmail.com" textAlignment="RIGHT" wrappingWidth="272.99668884277344">
+            <font>
+               <Font size="17.0" />
+            </font></Text>
+
+         <Text fill="WHITE" layoutX="88.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hardware Management System">
+            <font>
+               <Font name="Franklin Gothic Demi" size="13.0" />
+            </font>
+         </Text>
+
+         <Text fill="WHITE" layoutX="86.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Toolmart">
+            <font>
+               <Font name="Franklin Gothic Demi Cond" size="45.0" />
+            </font>
+         </Text>
+
+         <ImageView fitHeight="81.0" fitWidth="98.0" layoutX="-4.0" layoutY="-1.0">
+            <image>
+               <Image url="@../images/il.png" />
+            </image>
+         </ImageView>
+         <ImageView layoutX="826.0" layoutY="13.0">
+            <image>
+               <Image url="@../images/iU.png" />
+            </image>
+         </ImageView>
+         <Text fx:id="lblUserName" fill="WHITE" layoutX="546.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SampleName" textAlignment="RIGHT" wrappingWidth="272.99668884277344" />
+      </children>
+   </Pane>
+</AnchorPane>
