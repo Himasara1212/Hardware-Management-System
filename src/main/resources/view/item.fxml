@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="body" prefHeight="471.0" prefWidth="819.0" style="-fx-background-color: #EEEEEE;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse.hardwaremanagementsystem.Controller.ItemsController">
+
+    <!-- TableView to show items -->
+    <TableView fx:id="tblItems" layoutX="10.0" layoutY="60.0" prefHeight="393.0" prefWidth="527.0">
+        <columns>
+            <TableColumn fx:id="colItemId" prefWidth="46.00002956390381" text="Item ID" />
+            <TableColumn fx:id="colItemName" prefWidth="139.3333396911621" text="Item Name" />
+            <TableColumn fx:id="colQty" minWidth="0.666656494140625" prefWidth="42.000030517578125" text="Qty" />
+            <TableColumn fx:id="colPrice" prefWidth="68.00001525878906" text="Price" />
+            <TableColumn fx:id="colSupId" prefWidth="84.6666259765625" text="Supplier ID" />
+         <TableColumn fx:id="colSupName" prefWidth="143.33330281575525" text="Supplier Name" />
+        </columns>
+    </TableView>
+
+    <!-- Right panel for item details -->
+    <AnchorPane layoutX="551.0" layoutY="7.0" prefHeight="453.0" prefWidth="255.0" style="-fx-background-color: #BCC6CD; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 15, 0.3, 0, 3);">
+
+        <!-- Item ID -->
+        <Label layoutX="19.0" layoutY="15.0" text="Item ID : ">
+            <font><Font size="14" /></font>
+        </Label>
+        <Label fx:id="lblItemId" layoutX="80.0" layoutY="9.0" text="I001">
+            <font><Font name="System Bold" size="20.0" /></font>
+        </Label>
+
+        <!-- Item Name -->
+        <Label layoutX="17.0" layoutY="39.0" text="Item Name">
+            <font><Font size="14" /></font>
+        </Label>
+        <TextField fx:id="txtItemName" layoutX="17.0" layoutY="59.0" prefWidth="220.0" />
+
+        <!-- Category ID -->
+        <Label layoutX="17.0" layoutY="99.0" text="Category ID">
+            <font><Font size="14" /></font>
+        </Label>
+
+        <!-- Supplier ID -->
+        <Label layoutX="17.0" layoutY="159.0" text="Supplier ID">
+            <font><Font size="14" /></font>
+        </Label>
+
+        <!-- Quantity -->
+        <Label layoutX="17.0" layoutY="219.0" text="Qty">
+            <font><Font size="14" /></font>
+        </Label>
+        <TextField fx:id="txtQty" layoutX="18.0" layoutY="239.0" prefWidth="220.0" />
+
+        <!-- Price -->
+        <Label layoutX="17.0" layoutY="279.0" text="Price">
+            <font><Font size="14" /></font>
+        </Label>
+        <TextField fx:id="txtPrice" layoutX="17.0" layoutY="299.0" prefWidth="220.0" />
+
+        <!-- Buttons -->
+        <Button fx:id="btnSave" layoutX="139.0" layoutY="331.0" onAction="#itemSave" prefWidth="100.0" style="-fx-background-color: #299676; -fx-text-fill: white; -fx-background-radius: 7;" text="Save" />
+        <Button fx:id="btnUpdate" layoutX="19.0" layoutY="331.0" prefWidth="100.0" style="-fx-background-color: #0573A8; -fx-text-fill: white; -fx-background-radius: 7;" text="Update" />
+        <Button fx:id="btnDelete" layoutX="19.0" layoutY="371.0" prefWidth="100.0" style="-fx-background-color: #B30000; -fx-text-fill: white; -fx-background-radius: 7;" text="Delete" />
+        <Button fx:id="btnReset" layoutX="139.0" layoutY="371.0" prefWidth="100.0" style="-fx-background-color: #BD9E75; -fx-text-fill: white; -fx-background-radius: 7;" text="Reset" />
+
+        <!-- Generate Report -->
+        <Button fx:id="btnGenerateReport" layoutX="17.0" layoutY="411.0" prefWidth="220.0" style="-fx-background-color: #627398; -fx-text-fill: white; -fx-background-radius: 7;" text="Generate Item Report" />
+      <ComboBox fx:id="comboSupId" layoutX="15.0" layoutY="179.0" prefHeight="27.0" prefWidth="220.0" />
+      <ComboBox fx:id="comboCateId" layoutX="15.0" layoutY="119.0" prefHeight="27.0" prefWidth="220.0" />
+
+    </AnchorPane>
+   <Label layoutX="29.0" layoutY="20.0" text="Manage Items">
+      <font>
+         <Font name="System Bold" size="20.0" />
+      </font>
+   </Label>
+
+</AnchorPane>

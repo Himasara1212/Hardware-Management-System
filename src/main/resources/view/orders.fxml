@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="550.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse.hardwaremanagementsystem.Controller.OrdersController">
+
+    <!-- Title -->
+    <Label layoutX="20" layoutY="20" text="Manage Order">
+        <font><Font name="System Bold" size="20.0" /></font>
+    </Label>
+
+    <!-- TableView to display orders -->
+    <TableView fx:id="tblOrders" layoutX="7.0" layoutY="60.0" prefHeight="460" prefWidth="595.0">
+        <columns>
+            <TableColumn fx:id="colOrderId" prefWidth="67.0" text="Order ID" />
+            <TableColumn fx:id="colCustomerId" prefWidth="70.0" text="Customer ID" />
+            <TableColumn fx:id="colItemId" prefWidth="67.0" text="Item ID" />
+            <TableColumn fx:id="colQty" prefWidth="72.0" text="Qty" />
+            <TableColumn fx:id="colPrice" prefWidth="90.0" text="Price" />
+            <TableColumn fx:id="colOrderDate" prefWidth="100.0" text="Order Date" />
+            <TableColumn fx:id="colStatus" prefWidth="130.0" text="Status" />
+        </columns>
+    </TableView>
+
+    <!-- Right panel for order details -->
+    <AnchorPane layoutX="612.0" layoutY="20.0" prefHeight="511.0" prefWidth="273.0" style="-fx-background-color: #BCC6CD; -fx-background-radius: 20;">
+        <children>
+
+            <!-- Order ID -->
+            <Label layoutX="20.0" layoutY="46.0" text="Order ID">
+                <font><Font size="15.0" /></font>
+            </Label>
+            <Label fx:id="lblOrderId" layoutX="141.0" layoutY="46.0" text="O001">
+                <font><Font name="System Bold" size="15.0" /></font>
+            </Label>
+
+            <!-- Customer ID -->
+            <Label layoutX="17.0" layoutY="77.0" text="Customer ID">
+                <font><Font size="15.0" /></font>
+            </Label>
+            <TextField fx:id="txtCustomerId" layoutX="17.0" layoutY="99.0" prefWidth="240" />
+
+            <!-- Item ID -->
+            <Label layoutX="20.0" layoutY="131.0" text="Item ID">
+                <font><Font size="15.0" /></font>
+            </Label>
+            <TextField fx:id="txtItemId" layoutX="17.0" layoutY="153.0" prefWidth="240" />
+
+            <!-- Quantity -->
+            <Label layoutX="16.0" layoutY="189.0" text="Quantity">
+                <font><Font size="15.0" /></font>
+            </Label>
+            <TextField fx:id="txtQty" layoutX="17.0" layoutY="211.0" prefWidth="240" />
+
+            <!-- Price -->
+            <Label layoutX="20.0" layoutY="245.0" text="Price">
+                <font><Font size="15.0" /></font>
+            </Label>
+            <TextField fx:id="txtPrice" layoutX="18.0" layoutY="265.0" prefWidth="240" />
+
+            <!-- Order Date -->
+            <Label layoutX="18.0" layoutY="297.0" text="Order Date">
+                <font><Font size="15.0" /></font>
+            </Label>
+            <DatePicker fx:id="dpOrderDate" layoutX="17.0" layoutY="319.0" prefWidth="240" />
+
+            <!-- Status -->
+            <Label layoutX="20.0" layoutY="355.0" text="Status">
+                <font><Font size="15.0" /></font>
+            </Label>
+            <ComboBox fx:id="cmbStatus" layoutX="21.0" layoutY="377.0" prefWidth="240" />
+
+            <!-- Buttons -->
+            <Button fx:id="btnDelete" layoutX="21.0" layoutY="423.0" prefWidth="73.0" style="-fx-background-color: #D47C7C; -fx-background-radius: 7; -fx-text-fill: white;" text="Delete" />
+            <Button fx:id="btnUpdate" layoutX="104.0" layoutY="423.0" prefWidth="73.0" style="-fx-background-color: #6A98CC; -fx-background-radius: 7; -fx-text-fill: white;" text="Update" />
+            <Button fx:id="btnSave" layoutX="184.0" layoutY="423.0" prefWidth="73.0" style="-fx-background-color: #5DBB8A; -fx-background-radius: 7; -fx-text-fill: white;" text="Save" />
+            <Button fx:id="btnReset" layoutX="32.0" layoutY="455.0" prefWidth="218.0" style="-fx-background-color: #BD9E75; -fx-background-radius: 7; -fx-text-fill: white;" text="Reset" />
+
+        </children>
+    </AnchorPane>
+
+</AnchorPane>

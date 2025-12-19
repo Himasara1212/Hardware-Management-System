@@ -110,3 +110,7 @@ CREATE TABLE payments (
     FOREIGN KEY (order_id) REFERENCES orders(order_id)
 );
 INSERT INTO payments VALUES ('P001', 'O001', '2025-11-02', 'Cash', 1500.00);
+
+ALTER TABLE items
+DROP COLUMN manufacturing_date,
+DROP COLUMN expiry_date;

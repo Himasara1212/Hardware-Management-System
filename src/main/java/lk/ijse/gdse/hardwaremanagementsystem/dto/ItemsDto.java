@@ -1,13 +1,16 @@
 package lk.ijse.gdse.hardwaremanagementsystem.dto;
 
 import lombok.*;
+import java.time.LocalDate;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class SupplierDto {
+public class ItemsDto {
+    private String itemId;
     private String supplierId;
+    private String categoryId;
     private String name;
-    private String contact;
-    private String email;
-    private String address;
+    private double price;
+    private int qty;
 }

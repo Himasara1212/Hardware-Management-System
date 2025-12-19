@@ -44,14 +44,14 @@
             </LinearGradient>
          </fill>
       </Rectangle>
-      <Label layoutX="33.0" layoutY="98.0" prefHeight="43.0" prefWidth="196.0" text="Rs.10,000/=">
+      <Label fx:id="lblcashOnHand" layoutX="33.0" layoutY="98.0" prefHeight="43.0" prefWidth="196.0" text="Rs.10,000/=">
          <font>
             <Font name="Franklin Gothic Demi Cond" size="34.0" />
          </font>
       </Label>
       <Label layoutX="33.0" layoutY="130.0" prefHeight="24.0" prefWidth="83.0" text="Current (Today)" />
       <Label layoutX="15.0" layoutY="70.0" prefHeight="17.0" prefWidth="83.0" text="Cash On Hand" />
-      <Label layoutX="15.0" layoutY="43.0" prefHeight="20.0" prefWidth="90.0" text="Today Details">
+      <Label fx:id="lblwellcome1" layoutX="15.0" layoutY="43.0" prefHeight="20.0" prefWidth="90.0" text="Today Details">
          <font>
             <Font size="14.0" />
          </font>
@@ -109,18 +109,18 @@
       <Label layoutX="15.0" layoutY="169.0" prefHeight="20.0" prefWidth="139.0" text="Item Issueing &amp; Returning" />
       <Text layoutX="76.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Items Issued" wrappingWidth="43.523422241210994" />
       <Text layoutX="185.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Items Return" wrappingWidth="43.52342224121094" />
-      <Label layoutX="31.0" layoutY="207.0" prefHeight="39.0" prefWidth="44.0" text="20">
+      <Label fx:id="lblTodayIi" layoutX="31.0" layoutY="207.0" prefHeight="39.0" prefWidth="44.0" text="20">
          <font>
             <Font name="Franklin Gothic Demi Cond" size="34.0" />
          </font>
       </Label>
-      <Label layoutX="143.0" layoutY="206.0" prefHeight="39.0" prefWidth="35.0" text="20">
+      <Label fx:id="lblTodayIR" layoutX="143.0" layoutY="206.0" prefHeight="39.0" prefWidth="35.0" text="20">
          <font>
             <Font name="Franklin Gothic Demi Cond" size="34.0" />
          </font>
       </Label>
-      <PieChart layoutY="293.0" legendSide="TOP" prefHeight="256.0" prefWidth="376.0" title="Stock Levels" />
-      <LineChart layoutX="375.0" layoutY="297.0" prefHeight="247.0" prefWidth="529.0">
+      <PieChart fx:id="pieChart" layoutY="293.0" legendSide="TOP" prefHeight="256.0" prefWidth="376.0" title="Stock Levels" />
+      <LineChart fx:id="lineChart" layoutX="375.0" layoutY="297.0" prefHeight="247.0" prefWidth="529.0">
         <xAxis>
           <CategoryAxis label="Today Sales" side="BOTTOM" />
         </xAxis>
@@ -129,51 +129,36 @@
         </yAxis>
       </LineChart>
       <PointLight color="CHARTREUSE" layoutX="279.0" layoutY="322.0" lightOn="true" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f4f4f4" height="225.0" layoutX="253.0" layoutY="44.0" stroke="BLACK" strokeType="INSIDE" width="208.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="225.0" layoutX="468.0" layoutY="44.0" stroke="BLACK" strokeType="INSIDE" width="208.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="225.0" layoutX="682.0" layoutY="44.0" stroke="BLACK" strokeType="INSIDE" width="208.0" />
-      <Label layoutX="265.0" layoutY="55.0" text="High Demand Items" />
-      <Label layoutX="478.0" layoutY="55.0" text="Best Suppliers" />
-      <Label layoutX="692.0" layoutY="54.0" text="Orders" />
-      <Label layoutX="288.0" layoutY="87.0" text="Items" />
-      <Label layoutX="390.0" layoutY="87.0" text="Item Qty" />
-      <Label layoutX="262.0" layoutY="111.0" text="-" />
-      <Label layoutX="262.0" layoutY="141.0" text="-" />
-      <Label layoutX="262.0" layoutY="170.0" text="-" />
-      <Label layoutX="262.0" layoutY="201.0" text="-" />
-      <Label layoutX="262.0" layoutY="233.0" text="-" />
-      <Label layoutX="361.0" layoutY="111.0" text="-" />
-      <Label layoutX="361.0" layoutY="141.0" text="-" />
-      <Label layoutX="361.0" layoutY="170.0" text="-" />
-      <Label layoutX="361.0" layoutY="202.0" text="-" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f4f4f4" height="225.0" layoutX="308.0" layoutY="46.0" stroke="BLACK" strokeType="INSIDE" width="208.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="225.0" layoutX="585.0" layoutY="44.0" stroke="BLACK" strokeType="INSIDE" width="222.0" />
+      <Label layoutX="320.0" layoutY="57.0" text="High Demand Items" />
+      <Label layoutX="609.0" layoutY="55.0" text="Best Suppliers" />
+      <Label layoutX="343.0" layoutY="89.0" text="Items" />
+      <Label layoutX="445.0" layoutY="89.0" text="Item Qty" />
+      <Label fx:id="lblItem1" layoutX="317.0" layoutY="113.0" prefHeight="17.0" prefWidth="90.0" text="-" />
+      <Label fx:id="lblItem2" layoutX="317.0" layoutY="143.0" prefHeight="17.0" prefWidth="90.0" text="-" />
+      <Label fx:id="lblItem3" layoutX="317.0" layoutY="172.0" prefHeight="17.0" prefWidth="96.0" text="-" />
+      <Label fx:id="lblItem4" layoutX="317.0" layoutY="203.0" prefHeight="17.0" prefWidth="90.0" text="-" />
+      <Label fx:id="lblItem5" layoutX="317.0" layoutY="235.0" prefHeight="17.0" prefWidth="90.0" text="-" />
+      <Label fx:id="lblItemQty1" layoutX="416.0" layoutY="113.0" prefHeight="17.0" prefWidth="90.0" text="-" />
+      <Label fx:id="lblItemQty2" layoutX="416.0" layoutY="143.0" prefHeight="17.0" prefWidth="90.0" text="-" />
+      <Label fx:id="lblItemQty3" layoutX="416.0" layoutY="172.0" prefHeight="17.0" prefWidth="90.0" text="-" />
+      <Label fx:id="lblItemQty4" layoutX="416.0" layoutY="204.0" prefHeight="17.0" prefWidth="96.0" text="-" />
       
-      <Label layoutX="361.0" layoutY="233.0" text="-" />
-      <Line endX="36.666656494140625" endY="-68.66666412353516" layoutX="338.0" layoutY="141.0" startX="-72.99996948242188" startY="-68.66666412353516" />
-      <Line endX="1.66668701171875" endY="-7.62939453125E-6" layoutX="553.0" layoutY="73.0" startX="-77.66668701171875" startY="-7.62939453125E-6" />
-      <Label layoutX="478.0" layoutY="87.0" text="Supplier Name" />
-      <Label layoutX="597.0" layoutY="89.0" text="Item Qty" />
-      <Label layoutX="478.0" layoutY="111.0" text="-" />
-      <Label layoutX="478.0" layoutY="141.0" text="-" />
-      <Label layoutX="478.0" layoutY="170.0" text="-" />
-      <Label layoutX="478.0" layoutY="201.0" text="-" />
-      <Label layoutX="478.0" layoutY="233.0" text="-" />
-      <Label layoutX="583.0" layoutY="111.0" text="-" />
-      <Label layoutX="583.0" layoutY="141.0" text="-" />
-      <Label layoutX="583.0" layoutY="170.0" text="-" />
-      <Label layoutX="583.0" layoutY="202.0" text="-" />
-      <Label layoutX="583.0" layoutY="233.0" text="-" />
-      <Label layoutX="710.0" layoutY="89.0" text="Order" />
-      <Label layoutX="822.0" layoutY="87.0" text="Order Qty" />
-      <Label layoutX="693.0" layoutY="111.0" text="-" />
-      <Label layoutX="693.0" layoutY="202.0" text="-" />
-      <Label layoutX="693.0" layoutY="170.0" text="-" />
-      <Label layoutX="693.0" layoutY="141.0" text="-" />
-      <Label layoutX="693.0" layoutY="233.0" text="-" />
-      <Label layoutX="794.0" layoutY="233.0" text="-" />
-      <Label layoutX="794.0" layoutY="202.0" text="-" />
-      <Label layoutX="794.0" layoutY="170.0" text="-" />
-      <Label layoutX="794.0" layoutY="141.0" text="-" />
-      <Label layoutX="794.0" layoutY="111.0" text="-" />
-      <Line endX="22.66668701171875" endY="-0.6666641235351562" layoutX="710.0" layoutY="72.0" startX="-18.0" startY="-0.6666641235351562" />
+      <Label fx:id="lblItemQty5" layoutX="416.0" layoutY="235.0" prefHeight="17.0" prefWidth="90.0" text="-" />
+      <Line endX="36.666656494140625" endY="-68.66666412353516" layoutX="393.0" layoutY="143.0" startX="-72.99996948242188" startY="-68.66666412353516" />
+      <Line endX="1.66668701171875" endY="-7.62939453125E-6" layoutX="684.0" layoutY="73.0" startX="-77.66668701171875" startY="-7.62939453125E-6" />
+      <Label layoutX="609.0" layoutY="87.0" text="Supplier Name" />
+      <Label layoutX="728.0" layoutY="89.0" text="Suplier Email" />
+      <Label fx:id="lblSup1" layoutX="609.0" layoutY="111.0" prefHeight="17.0" prefWidth="90.0" text="-" />
+      <Label fx:id="lblSup2" layoutX="609.0" layoutY="141.0" prefHeight="17.0" prefWidth="96.0" text="-" />
+      <Label fx:id="lblSup3" layoutX="609.0" layoutY="170.0" prefHeight="17.0" prefWidth="96.0" text="-" />
+      <Label fx:id="lblSup4" layoutX="609.0" layoutY="201.0" prefHeight="17.0" prefWidth="96.0" text="-" />
+      <Label fx:id="lblSup5" layoutX="609.0" layoutY="233.0" prefHeight="17.0" prefWidth="96.0" text="-" />
+      <Label fx:id="lblEmail1" layoutX="714.0" layoutY="111.0" prefHeight="17.0" prefWidth="90.0" text="-" />
+      <Label fx:id="lblEmail2" layoutX="714.0" layoutY="141.0" prefHeight="17.0" prefWidth="83.0" text="-" />
+      <Label fx:id="lblEmail3" layoutX="714.0" layoutY="170.0" prefHeight="17.0" prefWidth="83.0" text="-" />
+      <Label fx:id="lblEmail4" layoutX="714.0" layoutY="202.0" prefHeight="17.0" prefWidth="83.0" text="-" />
+      <Label fx:id="lblEmail5" layoutX="714.0" layoutY="233.0" prefHeight="17.0" prefWidth="80.0" text="-" />
    </children>
 </AnchorPane>

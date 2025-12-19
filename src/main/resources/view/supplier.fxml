@@ -60,16 +60,16 @@
                 <TableColumn fx:id="columnTempCategoryId" prefWidth="65.0" text="Category ID" />
                 <TableColumn fx:id="columnTempQty" prefWidth="65.0" text="Qty" />
                 <TableColumn fx:id="columnTempName" prefWidth="125.0" text="Name" />
-                <TableColumn fx:id="columnTempPrice" prefWidth="65.0" text="Price" />
+                <TableColumn fx:id="columnTempPrice" prefWidth="76.66665649414062" text="Price" />
 
                 <!-- FIXED: no spaces in fx:id -->
-                <TableColumn fx:id="columnManufacturingDate" prefWidth="90.0" text="Manufacturing Date" />
-                <TableColumn fx:id="columnExpiryDate" prefWidth="90.0" text="Expiry Date" />
+                <TableColumn fx:id="columnManufacturingDate" prefWidth="87.333251953125" text="Manufacturing Date" />
+                <TableColumn fx:id="columnExpiryDate" prefWidth="94.66667683919275" text="Expiry Date" />
 
             </columns>
         </TableView>
 
-        <AnchorPane layoutX="621.0" layoutY="19.0" prefHeight="511.0" prefWidth="273.0" style="-fx-background-color: #BCC6CD;">
+        <AnchorPane layoutX="621.0" layoutY="19.0" prefHeight="511.0" prefWidth="273.0" style="-fx-background-color: #BCC6CD; -fx-background-radius: 20;">
             <children>
 
                 <AnchorPane layoutX="6.0" layoutY="388.0" prefHeight="81.0" prefWidth="261.0" style="-fx-background-color: #A5A7A8; -fx-background-radius: 2;">

@@ -94,6 +94,7 @@ public class ManageSuppliersController {
     @FXML
     void UpdateSupplier(ActionEvent event) {
 
+
     }
 
     @FXML
@@ -125,5 +126,4 @@ public class ManageSuppliersController {
     void saveSupplier(ActionEvent event) {
 
     }
-
 }

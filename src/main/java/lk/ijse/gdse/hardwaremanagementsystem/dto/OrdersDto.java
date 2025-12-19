@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 @Setter
 @ToString
 
-public class OrderDto {
+public class OrdersDto {
     private String orderId;
     private String customerId;
     private LocalDateTime orderDate;
@@ -18,5 +18,4 @@ public class OrderDto {
     private String status;
     private String paymentStatus;
     private String deliveryStatus;
-
 }
