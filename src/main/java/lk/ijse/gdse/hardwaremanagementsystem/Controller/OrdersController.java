@@ -23,26 +23,26 @@ public class OrdersController {
 
     @FXML
     void btnSaveOrder(ActionEvent event) {
-        try {
-            OrdersDto dto = new OrdersDto(
-                    txtOrderId.getText(),
-                    txtCustomerId.getText(),
-                    LocalDate.now().atStartOfDay(),
-                    Double.parseDouble(txtTotalAmount.getText()),
-                    "Pending",       // default status
-                    "Unpaid",        // default payment status
-                    "Not Delivered"  // default delivery status
-            );
-
-            boolean isSaved = ordersModel.saveOrder(dto);
-            if (isSaved) {
-                new Alert(Alert.AlertType.CONFIRMATION, "Order Saved Successfully!").show();
-            } else {
-                new Alert(Alert.AlertType.ERROR, "Failed to Save Order!").show();
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-            new Alert(Alert.AlertType.ERROR, "Database Error!").show();
-        }
+//        try {
+//            OrdersDto dto = new OrdersDto(
+//                    txtOrderId.getText(),
+//                    txtCustomerId.getText(),
+//                    LocalDate.now().atStartOfDay(),
+//                    Double.parseDouble(txtTotalAmount.getText()),
+//                    "Pending",       // default status
+//                    "Unpaid",        // default payment status
+//                    "Not Delivered"  // default delivery status
+//            );
+//
+//            boolean isSaved = ordersModel.saveOrder(dto);
+//            if (isSaved) {
+//                new Alert(Alert.AlertType.CONFIRMATION, "Order Saved Successfully!").show();
+//            } else {
+//                new Alert(Alert.AlertType.ERROR, "Failed to Save Order!").show();
+//            }
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//            new Alert(Alert.AlertType.ERROR, "Database Error!").show();
+//        }
     }
 }

@@ -34,7 +34,7 @@ public class UserModel {
         if (resultSet.next()) {
             userDto = new UserDto();
 
-            userDto.setUserId(resultSet.getString("user_id"));
+            userDto.setUser_Id(resultSet.getString("user_id"));
             userDto.setUsername(resultSet.getString("user" +
                     "name"));
             userDto.setEmail(resultSet.getString("email"));

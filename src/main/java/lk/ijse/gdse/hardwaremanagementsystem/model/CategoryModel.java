@@ -22,7 +22,7 @@ public class CategoryModel {
 
         while (rst.next()) {
             CategoryDto dto = new CategoryDto();
-            dto.setCategoryId(rst.getString("category_id"));
+            dto.setCategory_id(rst.getString("category_id"));
             dto.setName(rst.getString("name"));
 
             categoryList.add(dto);

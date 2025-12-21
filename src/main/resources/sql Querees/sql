@@ -1,7 +1,8 @@
-DROP DATABASE HMS;
+DROP DATABASE IF EXISTS HMS;
 CREATE DATABASE HMS;
 USE HMS;
 
+-- User
 CREATE TABLE user (
     user_id VARCHAR(255) PRIMARY KEY,
     username VARCHAR(50) UNIQUE NOT NULL,
@@ -10,6 +11,7 @@ CREATE TABLE user (
 );
 INSERT INTO user VALUES ('U001','admin','admin','admin');
 
+-- Supplier
 CREATE TABLE supplier (
     supplier_id VARCHAR(255) PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
@@ -18,17 +20,17 @@ CREATE TABLE supplier (
     address VARCHAR(255)
 );
 INSERT INTO supplier (supplier_id, name, contact, email, address)
-VALUES ('SUP-001', 'ABC Hardware', '0771234567', 'abchardware@gmail.com', 'Panadura');
+VALUES ('S001', 'ABC Hardware', '0771234567', 'abchardware@gmail.com', 'Panadura');
 
+-- Category
 CREATE TABLE categories (
     category_id VARCHAR(255) PRIMARY KEY,
     name VARCHAR(100) NOT NULL
 );
-
 INSERT INTO categories (category_id, name)
-VALUES ('CAT-001', 'Tools');
+VALUES ('C001', 'Tools');
 
-
+-- Customer
 CREATE TABLE customer (
     customer_id VARCHAR(255) PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
@@ -36,11 +38,10 @@ CREATE TABLE customer (
     email VARCHAR(100),
     address VARCHAR(255)
 );
-
 INSERT INTO customer (customer_id, name, contact, email, address)
-VALUES ('CUS-001', 'Nimal Perera', '0771234567', 'nimal@gmail.com', 'Panadura');
+VALUES ('Cust001', 'Nimal Perera', '0771234567', 'nimal@gmail.com', 'Panadura');
 
-
+-- Items
 CREATE TABLE items (
     item_id VARCHAR(255) PRIMARY KEY,
     sup_id VARCHAR(255),
@@ -48,15 +49,13 @@ CREATE TABLE items (
     name VARCHAR(100),
     price DOUBLE,
     qty INT,
-
     FOREIGN KEY (sup_id) REFERENCES supplier(supplier_id),
     FOREIGN KEY (category_id) REFERENCES categories(category_id)
 );
-
 INSERT INTO items (item_id, sup_id, category_id, name, price, qty)
-VALUES ('ITM-001', 'SUP-001', 'CAT-001', 'Hammer', 1200.00, 10);
+VALUES ('I001', 'S001', 'C001', 'Hammer', 1200.00, 10);
 
-
+-- Orders
 CREATE TABLE orders (
     order_id VARCHAR(255) PRIMARY KEY,
     customer_id VARCHAR(255),
@@ -64,10 +63,10 @@ CREATE TABLE orders (
     total_amount DOUBLE,
     FOREIGN KEY (customer_id) REFERENCES customer(customer_id)
 );
-
 INSERT INTO orders (order_id, customer_id, order_date, total_amount)
-VALUES ('ORD-001', 'CUS-001', '2025-12-21 12:00:00', 6000.00);
+VALUES ('O001', 'Cust001', '2025-12-21 12:00:00', 6000.00);
 
+-- Order Items
 CREATE TABLE order_items (
     order_item_id VARCHAR(255) PRIMARY KEY,
     order_id VARCHAR(255),
@@ -78,10 +77,10 @@ CREATE TABLE order_items (
     FOREIGN KEY (order_id) REFERENCES orders(order_id),
     FOREIGN KEY (item_id) REFERENCES items(item_id)
 );
-
 INSERT INTO order_items (order_item_id, order_id, item_id, qty, unit_price, total)
-VALUES ('OI-001', 'ORD-001', 'ITM-001', 5, 1200.00, 6000.00);
+VALUES ('Od001', 'O001', 'I001', 5, 1200.00, 6000.00);
 
+-- Payment
 CREATE TABLE payment (
     payment_id VARCHAR(255) PRIMARY KEY,
     order_id VARCHAR(255),
@@ -90,10 +89,10 @@ CREATE TABLE payment (
     status VARCHAR(50),
     FOREIGN KEY (order_id) REFERENCES orders(order_id)
 );
-
 INSERT INTO payment (payment_id, order_id, payment_date, amount, status)
-VALUES ('PAY-001', 'ORD-001', '2025-12-21 12:30:00', 6000.00, 'PAID');
+VALUES ('P001', 'O001', '2025-12-21 12:30:00', 6000.00, 'PAID');
 
+-- Returns
 CREATE TABLE returns (
     return_id VARCHAR(255) PRIMARY KEY,
     order_id VARCHAR(255),
@@ -103,6 +102,5 @@ CREATE TABLE returns (
     status VARCHAR(50),
     FOREIGN KEY (order_id) REFERENCES orders(order_id)
 );
-
 INSERT INTO returns (return_id, order_id, return_date, refund_amount, reason, status)
-VALUES ('RET-001', 'ORD-001', '2025-12-21 15:00:00', 1200.00, 'Damaged item', 'APPROVED');
+VALUES ('R001', 'O001', '2025-12-21 15:00:00', 1200.00, 'Damaged item', 'APPROVED');

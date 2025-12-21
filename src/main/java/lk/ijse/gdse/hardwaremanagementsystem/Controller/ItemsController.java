@@ -9,6 +9,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import lk.ijse.gdse.hardwaremanagementsystem.dto.CategoryDto;
+import lk.ijse.gdse.hardwaremanagementsystem.dto.ItemsDto;
 import lk.ijse.gdse.hardwaremanagementsystem.dto.SupplierDto;
 import lk.ijse.gdse.hardwaremanagementsystem.dto.Tm.ItemTm;
 import lk.ijse.gdse.hardwaremanagementsystem.model.CategoryModel;
@@ -121,7 +122,7 @@ public class ItemsController implements Initializable {
         ObservableList<String> supIds = FXCollections.observableArrayList();
 
         for (SupplierDto dto : allSuppliers) {
-            supIds.add(dto.getSupplierId() + " | " +  dto.getName());
+            supIds.add(dto.getSupplier_Id() + " | " +  dto.getName());
         }
 
         comboSupId.setItems(supIds);
@@ -133,7 +134,7 @@ public class ItemsController implements Initializable {
 
         ObservableList<String> categoryIds = FXCollections.observableArrayList();
         for (CategoryDto dto : allCategories) {
-            categoryIds.add(dto.getCategoryId() + " | " +dto.getName());
+            categoryIds.add(dto.getCategory_id() + " | " +dto.getName());
         }
         comboCateId.setItems(categoryIds);
     }
@@ -142,15 +143,14 @@ public class ItemsController implements Initializable {
     void itemSave(ActionEvent event) {
         try {
             String itemId = lblItemId.getText();
-
             // Get only the IDs from the ComboBox value
             String categoryId = comboCateId.getSelectionModel().getSelectedItem().split(" \\| ")[0];
             String supplierId = comboSupId.getSelectionModel().getSelectedItem().split(" \\| ")[0];
-
             String itemName = txtItemName.getText();
             double price = Double.parseDouble(txtPrice.getText());
+            int qty = Integer.parseInt(txtQty.getText());
 
-            boolean isSaved = itemsModel.saveItem(itemId, supplierId, categoryId, itemName, price);
+            boolean isSaved = itemsModel.saveItem(new ItemsDto(itemId, supplierId, categoryId, itemName, price, qty));
             if (isSaved) {
                 new Alert(Alert.AlertType.INFORMATION, "Item saved successfully!").show();
                 clearTextFields();
