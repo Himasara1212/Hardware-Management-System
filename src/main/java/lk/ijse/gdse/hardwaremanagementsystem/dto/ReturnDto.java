@@ -17,5 +17,4 @@ public class ReturnDto {
     private double refundAmount;
     private String reason;
     private String status;
-
 }

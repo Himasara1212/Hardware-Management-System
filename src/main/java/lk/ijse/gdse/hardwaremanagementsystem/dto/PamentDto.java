@@ -15,7 +15,6 @@ public class PamentDto {
     private String paymentId;
     private String orderId;
     private LocalDateTime paymentDate;
-    private String method;
     private double amount;
     private String status;
 }

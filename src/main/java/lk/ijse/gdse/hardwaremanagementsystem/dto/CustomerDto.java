@@ -17,5 +17,4 @@ public class CustomerDto {
     private String contact;
     private String email;
     private String address;
-    private LocalDateTime registeredDate;
 }

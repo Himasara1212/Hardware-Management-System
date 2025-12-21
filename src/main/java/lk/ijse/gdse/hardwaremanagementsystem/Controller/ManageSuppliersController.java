@@ -14,10 +14,16 @@ import javafx.scene.layout.AnchorPane;
 public class ManageSuppliersController {
 
     @FXML
+    private Button BtnAddItem;
+
+    @FXML
     private AnchorPane body;
 
     @FXML
     private Button btnDelete;
+
+    @FXML
+    private Button btnGetAllReport;
 
     @FXML
     private Button btnReset;
@@ -36,12 +42,6 @@ public class ManageSuppliersController {
 
     @FXML
     private TableColumn<?, ?> columnEmail;
-
-    @FXML
-    private TableColumn<?, ?> columnExpiryDate;
-
-    @FXML
-    private TableColumn<?, ?> columnManufacturingDate;
 
     @FXML
     private TableColumn<?, ?> columnName;
@@ -94,7 +94,6 @@ public class ManageSuppliersController {
     @FXML
     void UpdateSupplier(ActionEvent event) {
 
-
     }
 
     @FXML
@@ -103,7 +102,22 @@ public class ManageSuppliersController {
     }
 
     @FXML
+    void getAllRepoet(ActionEvent event) {
+
+    }
+
+    @FXML
     void getDataOnClick(MouseEvent event) {
+
+    }
+
+    @FXML
+    void getmemActivityReport(ActionEvent event) {
+
+    }
+
+    @FXML
+    void getsupReport(ActionEvent event) {
 
     }
 
@@ -126,4 +140,5 @@ public class ManageSuppliersController {
     void saveSupplier(ActionEvent event) {
 
     }
+
 }

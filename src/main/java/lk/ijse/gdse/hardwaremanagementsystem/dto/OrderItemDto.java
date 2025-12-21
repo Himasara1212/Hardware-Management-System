@@ -3,15 +3,12 @@ package lk.ijse.gdse.hardwaremanagementsystem.dto;
 import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
-@Setter
-@ToString
-
+@Data
 public class OrderItemDto {
-    private int orderId;
-    private int itemId;
+    private String orderItemId;
+    private String orderId;
+    private String itemId;
     private int qty;
     private double unitPrice;
     private double total;
-
 }

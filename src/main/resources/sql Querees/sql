@@ -8,109 +8,101 @@ CREATE TABLE user (
     password VARCHAR(255) NOT NULL,
     email VARCHAR(100)
 );
-INSERT INTO user VALUES ('U001','admin','1234','admin@gmail.com');
+INSERT INTO user VALUES ('U001','admin','admin','admin');
 
 CREATE TABLE supplier (
     supplier_id VARCHAR(255) PRIMARY KEY,
-    name VARCHAR(100),
-    contact VARCHAR(50),
-    address VARCHAR(255),
-    email VARCHAR(100)
+    name VARCHAR(100) NOT NULL,
+    contact VARCHAR(20),
+    email VARCHAR(100),
+    address VARCHAR(255)
 );
-INSERT INTO supplier VALUES ('S001','Hardware A', '0771234567', 'Bentota', 'hardwarea@gmail.com');
+INSERT INTO supplier (supplier_id, name, contact, email, address)
+VALUES ('SUP-001', 'ABC Hardware', '0771234567', 'abchardware@gmail.com', 'Panadura');
 
 CREATE TABLE categories (
     category_id VARCHAR(255) PRIMARY KEY,
-    name VARCHAR(100)
+    name VARCHAR(100) NOT NULL
 );
-INSERT INTO categories VALUES ('C001', 'Electronics');
+
+INSERT INTO categories (category_id, name)
+VALUES ('CAT-001', 'Tools');
+
 
 CREATE TABLE customer (
     customer_id VARCHAR(255) PRIMARY KEY,
-    name VARCHAR(100),
-    contact VARCHAR(50),
-    address VARCHAR(255),
-    email VARCHAR(100)
+    name VARCHAR(100) NOT NULL,
+    contact VARCHAR(20),
+    email VARCHAR(100),
+    address VARCHAR(255)
 );
-INSERT INTO customer VALUES ('C001','Sanduni', '0711111111', 'Bentota', 'sanduni@gmail.com');
+
+INSERT INTO customer (customer_id, name, contact, email, address)
+VALUES ('CUS-001', 'Nimal Perera', '0771234567', 'nimal@gmail.com', 'Panadura');
+
 
 CREATE TABLE items (
     item_id VARCHAR(255) PRIMARY KEY,
-    supplier_id VARCHAR(255),
+    sup_id VARCHAR(255),
     category_id VARCHAR(255),
     name VARCHAR(100),
     price DOUBLE,
-    manufacturing_date DATE,
-    expiry_date DATE,
-    FOREIGN KEY (supplier_id) REFERENCES supplier(supplier_id),
+    qty INT,
+
+    FOREIGN KEY (sup_id) REFERENCES supplier(supplier_id),
     FOREIGN KEY (category_id) REFERENCES categories(category_id)
 );
-INSERT INTO items VALUES ('I001', 'S001', 'C001', 'Hammer', 1500.00, '2025-01-01', '2027-01-01');
+
+INSERT INTO items (item_id, sup_id, category_id, name, price, qty)
+VALUES ('ITM-001', 'SUP-001', 'CAT-001', 'Hammer', 1200.00, 10);
+
 
 CREATE TABLE orders (
     order_id VARCHAR(255) PRIMARY KEY,
     customer_id VARCHAR(255),
-    item_id VARCHAR(255),
-    qty INT,
-    price DOUBLE,
-    order_date DATE,
-    status VARCHAR(50),
-    FOREIGN KEY (customer_id) REFERENCES customer(customer_id),
-    FOREIGN KEY (item_id) REFERENCES items(item_id)
+    order_date DATETIME,
+    total_amount DOUBLE,
+    FOREIGN KEY (customer_id) REFERENCES customer(customer_id)
 );
-INSERT INTO orders VALUES ('O001', 'C001', 'I001', 1, 1500.00, '2025-11-01', 'Completed');
+
+INSERT INTO orders (order_id, customer_id, order_date, total_amount)
+VALUES ('ORD-001', 'CUS-001', '2025-12-21 12:00:00', 6000.00);
 
 CREATE TABLE order_items (
+    order_item_id VARCHAR(255) PRIMARY KEY,
     order_id VARCHAR(255),
     item_id VARCHAR(255),
-    PRIMARY KEY (order_id, item_id),
+    qty INT,
+    unit_price DOUBLE,
+    total DOUBLE,
     FOREIGN KEY (order_id) REFERENCES orders(order_id),
     FOREIGN KEY (item_id) REFERENCES items(item_id)
 );
-INSERT INTO order_items VALUES ('O001', 'I001');
 
-CREATE TABLE deliveries (
-    delivery_id VARCHAR(255) PRIMARY KEY,
-    order_id VARCHAR(255),
-    delivery_date DATE,
-    reason VARCHAR(255),
-    delivery_payment DOUBLE,
-    FOREIGN KEY (order_id) REFERENCES orders(order_id)
-);
-INSERT INTO deliveries VALUES ('D001', 'O001', '2025-11-02', 'Normal Delivery', 500.00);
+INSERT INTO order_items (order_item_id, order_id, item_id, qty, unit_price, total)
+VALUES ('OI-001', 'ORD-001', 'ITM-001', 5, 1200.00, 6000.00);
 
-CREATE TABLE warranties (
-    warranty_id VARCHAR(255) PRIMARY KEY,
-    delivery_id VARCHAR(255),
+CREATE TABLE payment (
+    payment_id VARCHAR(255) PRIMARY KEY,
     order_id VARCHAR(255),
-    start_date DATE,
-    end_date DATE,
+    payment_date DATETIME,
+    amount DOUBLE,
     status VARCHAR(50),
-    FOREIGN KEY (delivery_id) REFERENCES deliveries(delivery_id),
     FOREIGN KEY (order_id) REFERENCES orders(order_id)
 );
-INSERT INTO warranties VALUES ('W001', 'D001', 'O001', '2025-11-02', '2026-11-02', 'Active');
+
+INSERT INTO payment (payment_id, order_id, payment_date, amount, status)
+VALUES ('PAY-001', 'ORD-001', '2025-12-21 12:30:00', 6000.00, 'PAID');
 
 CREATE TABLE returns (
     return_id VARCHAR(255) PRIMARY KEY,
     order_id VARCHAR(255),
-    return_date DATE,
-    reason VARCHAR(255),
+    return_date DATETIME,
     refund_amount DOUBLE,
+    reason VARCHAR(255),
+    status VARCHAR(50),
     FOREIGN KEY (order_id) REFERENCES orders(order_id)
 );
-INSERT INTO returns VALUES ('R001', 'O001', '2025-11-05', 'Damaged item', 2000.00);
 
-CREATE TABLE payments (
-    payment_id VARCHAR(255) PRIMARY KEY,
-    order_id VARCHAR(255),
-    payment_date DATE,
-    payment_method VARCHAR(50),
-    total_amount DOUBLE,
-    FOREIGN KEY (order_id) REFERENCES orders(order_id)
-);
-INSERT INTO payments VALUES ('P001', 'O001', '2025-11-02', 'Cash', 1500.00);
-
-ALTER TABLE items
-DROP COLUMN manufacturing_date,
-DROP COLUMN expiry_date;
+INSERT INTO returns (return_id, order_id, return_date, refund_amount, reason, status)
+VALUES ('RET-001', 'ORD-001', '2025-12-21 15:00:00', 1200.00, 'Damaged item', 'APPROVED');

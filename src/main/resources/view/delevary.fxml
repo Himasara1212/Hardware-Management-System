@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="body" prefHeight="550.0" prefWidth="900.0" style="-fx-background-color: #EEEEEE;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse.hardwaremanagementsystem.Controller.DelevaryController">
+
+    <!-- Title -->
+    <Label layoutX="30.0" layoutY="20.0" text="Manage Deliveries">
+        <font>
+            <Font name="System Bold" size="22.0" />
+        </font>
+    </Label>
+
+    <!-- TableView -->
+    <TableView fx:id="tblDeliveries" layoutX="20.0" layoutY="70.0" prefHeight="466.0" prefWidth="591.0">
+
+        <columns>
+            <TableColumn fx:id="colDeliveryId" prefWidth="90" text="Delivery ID" />
+            <TableColumn fx:id="colOrderId" prefWidth="90" text="Order ID" />
+            <TableColumn fx:id="colDeliveryDate" prefWidth="124.66670227050781" text="Delivery Date" />
+            <TableColumn fx:id="colReason" prefWidth="175.3333740234375" text="Reason" />
+            <TableColumn fx:id="colDeliveryPayment" prefWidth="108.66665649414062" text="Payment" />
+        </columns>
+
+    </TableView>
+
+    <!-- Right Side Form -->
+    <AnchorPane layoutX="617.0" layoutY="29.0" prefHeight="505.0" prefWidth="273.0" style="-fx-background-color: #BCC6CD;                        -fx-background-radius: 12;                        -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 15, 0.3, 0, 3);">
+
+        <!-- Delivery ID -->
+        <Label layoutX="20.0" layoutY="46.0" text="Delivery ID :">
+            <font><Font size="14" /></font>
+        </Label>
+        <Label fx:id="lblDeliveryId" layoutX="137.0" layoutY="45.0" text="D001">
+            <font><Font name="System Bold" size="15.0" /></font>
+        </Label>
+
+        <!-- Order ID -->
+        <Label layoutX="20.0" layoutY="76.0" text="Order ID">
+            <font><Font size="14" /></font>
+        </Label>
+
+        <!-- Delivery Date -->
+        <Label layoutX="20.0" layoutY="135.0" text="Delivery Date">
+            <font><Font size="14" /></font>
+        </Label>
+        <DatePicker fx:id="dpDeliveryDate" layoutX="20.0" layoutY="155.0" prefHeight="25.0" prefWidth="239.0" promptText="date" />
+
+        <!-- Reason -->
+        <Label layoutX="20.0" layoutY="192.0" text="Reason">
+            <font><Font size="14" /></font>
+        </Label>
+        <TextField fx:id="txtReason" layoutX="20.0" layoutY="212.0" prefHeight="25.0" prefWidth="239.0" promptText="Reson" />
+
+        <!-- Payment -->
+        <Label layoutX="19.0" layoutY="246.0" text="Delivery Payment">
+            <font><Font size="14" /></font>
+        </Label>
+        <TextField fx:id="txtDeliveryPayment" layoutX="20.0" layoutY="266.0" prefHeight="25.0" prefWidth="239.0" promptText="Payment" />
+
+        <!-- Buttons -->
+        <Button fx:id="btnUpdate" layoutX="104.0" layoutY="309.0" onAction="#updateDelivery" opacity="0.61" prefHeight="25.0" prefWidth="74.0" style="-fx-background-color: #0573A8; -fx-text-fill: white; -fx-background-radius: 8;" text="Update">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+
+        <Button fx:id="btnSave" layoutX="185.0" layoutY="309.0" onAction="#deliverySave" opacity="0.68" prefHeight="25.0" prefWidth="74.0" style="-fx-background-color: #299676; -fx-text-fill: white; -fx-background-radius: 8;" text="Save">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+
+        <Button fx:id="btnDelete" layoutX="24.0" layoutY="309.0" onAction="#deleteDelivery" opacity="0.41" prefHeight="25.0" prefWidth="74.0" style="-fx-background-color: #B30000; -fx-text-fill: white; -fx-background-radius: 8;" text="Delete">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+
+        <Button fx:id="btnReset" layoutX="25.0" layoutY="342.0" onAction="#resetDelevery" opacity="0.59" prefHeight="25.0" prefWidth="231.0" style="-fx-background-color: #BD9E75; -fx-text-fill: white; -fx-background-radius: 8;" text="Reset">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <ComboBox fx:id="comborderId" layoutX="20.0" layoutY="96.0" prefHeight="25.0" prefWidth="239.0" promptText="Order Id" />
+
+    </AnchorPane>
+
+</AnchorPane>

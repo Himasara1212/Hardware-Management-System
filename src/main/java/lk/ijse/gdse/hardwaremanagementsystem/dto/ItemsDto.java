@@ -8,7 +8,7 @@ import java.time.LocalDate;
 @Data
 public class ItemsDto {
     private String itemId;
-    private String supplierId;
+    private String supId;
     private String categoryId;
     private String name;
     private double price;

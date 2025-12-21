@@ -6,16 +6,10 @@ import java.time.LocalDateTime;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
-@Setter
-@ToString
-
+@Data
 public class OrdersDto {
     private String orderId;
     private String customerId;
     private LocalDateTime orderDate;
     private double totalAmount;
-    private String status;
-    private String paymentStatus;
-    private String deliveryStatus;
 }

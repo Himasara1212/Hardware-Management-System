@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="550.0" prefWidth="900.0" style="-fx-background-color: #EEEEEE;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse.hardwaremanagementsystem.Controller.WarrentyController">
+
+    <Label layoutX="30.0" layoutY="16.0" style="-fx-text-fill: black;" text="Manage Warranty">
+        <font>
+            <Font name="System Bold" size="20.0" />
+        </font>
+    </Label>
+
+    <TableView fx:id="tblWarranty" layoutX="20.0" layoutY="60.0" prefHeight="471.0" prefWidth="580.0" style="-fx-text-fill: black;">
+        <columns>
+            <TableColumn fx:id="colWarrantyId" prefWidth="90.0" text="Warranty ID" />
+            <TableColumn fx:id="colOrderId" prefWidth="90.0" text="Order ID" />
+            <TableColumn fx:id="colStartDate" prefWidth="125.0" text="Start Date" />
+            <TableColumn fx:id="colEndDate" prefWidth="125.0" text="End Date" />
+            <TableColumn fx:id="colStatus" prefWidth="148.0" text="Status" />
+        </columns>
+    </TableView>
+
+    <AnchorPane layoutX="611.0" layoutY="15.0" prefHeight="517.0" prefWidth="278.0" style="-fx-background-color: #BCC6CD;                        -fx-background-radius: 12;                        -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 15, 0.3, 0, 3);">
+
+        <Label layoutX="18.0" layoutY="37.0" style="-fx-text-fill: black;" text="Warranty ID :">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+
+        <Label fx:id="lblWarrantyId" layoutX="133.0" layoutY="36.0" style="-fx-text-fill: black;" text="W001">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+
+        <Label layoutX="20.0" layoutY="70.0" style="-fx-text-fill: black;" text="Order ID">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+        <TextField fx:id="txtOrderId" layoutX="20.0" layoutY="90.0" prefHeight="25.0" prefWidth="237.0" promptText="Order Id" style="-fx-text-fill: black;" />
+
+        <Label layoutX="17.0" layoutY="127.0" style="-fx-text-fill: black;" text="Start Date">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+        <DatePicker fx:id="dpStartDate" layoutX="20.0" layoutY="147.0" prefHeight="25.0" prefWidth="237.0" />
+
+        <Label layoutX="20.0" layoutY="185.0" style="-fx-text-fill: black;" text="End Date">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+        <DatePicker fx:id="dpEndDate" layoutX="20.0" layoutY="205.0" prefHeight="25.0" prefWidth="237.0" />
+
+        <Label layoutX="21.0" layoutY="242.0" style="-fx-text-fill: black;" text="Status">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+        <ComboBox fx:id="cmbStatus" layoutX="20.0" layoutY="264.0" prefHeight="25.0" prefWidth="237.0" style="-fx-text-fill: black;" />
+
+        <Label layoutX="20.0" layoutY="300.0" style="-fx-text-fill: black;" text="Remarks">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+        <TextArea fx:id="txtRemarks" layoutX="20.0" layoutY="320.0" prefHeight="60.0" prefWidth="237.0" style="-fx-text-fill: black;" />
+
+        <Button fx:id="btnSave" layoutX="183.0" layoutY="389.0" onAction="#saveWarranty" opacity="0.95" prefHeight="25.0" prefWidth="73.0" style="-fx-background-color: #299676; -fx-text-fill: white; -fx-background-radius: 7;" text="Save">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+
+        <Button fx:id="btnUpdate" layoutX="102.0" layoutY="389.0" onAction="#updateWarranty" opacity="0.71" prefHeight="25.0" prefWidth="73.0" style="-fx-background-color: #0573A8; -fx-text-fill: white; -fx-background-radius: 7;" text="Update">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+
+        <Button fx:id="btnDelete" layoutX="21.0" layoutY="389.0" onAction="#deleteWarranty" opacity="0.6" prefHeight="25.0" prefWidth="73.0" style="-fx-background-color: #B30000; -fx-text-fill: white; -fx-background-radius: 7;" text="Delete">
+         <textFill>
+            <LinearGradient endX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="btnSave1" layoutX="20.0" layoutY="420.0" onAction="#saveWarranty" prefHeight="25.0" prefWidth="237.0" style="-fx-background-color: #BD9E75; -fx-background-radius: 7; -fx-text-fill: white;" text="Reset" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+
+    </AnchorPane>
+
+</AnchorPane>

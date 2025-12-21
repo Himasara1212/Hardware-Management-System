@@ -8,6 +8,6 @@ import lombok.*;
 @ToString
 
 public class CategoryDto {
-    private String categoryId;
+    private String category_id;
     private String name;
 }

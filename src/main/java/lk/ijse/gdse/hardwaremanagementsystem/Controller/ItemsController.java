@@ -153,6 +153,7 @@ public class ItemsController implements Initializable {
             boolean isSaved = itemsModel.saveItem(itemId, supplierId, categoryId, itemName, price);
             if (isSaved) {
                 new Alert(Alert.AlertType.INFORMATION, "Item saved successfully!").show();
+                clearTextFields();
                 pageReset();   // Reset for next item
                 loadItemTable(); // Refresh table
 
@@ -170,5 +171,13 @@ public class ItemsController implements Initializable {
 
     }
 
+    private void clearTextFields() {
+        txtItemName.clear();
+        txtPrice.clear();
+        txtQty.clear();
+
+        comboCateId.getSelectionModel().clearSelection();
+        comboSupId.getSelectionModel().clearSelection();
+    }
 
 }
